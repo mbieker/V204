@@ -61,6 +61,12 @@ Mithilfe der Dämpfung, die aus dem Verhältnis $\frac{A_{nah}}{A_fern}$ folgt, 
 \end{equation}
 Hierbei beschreibt $\Delta x$ den Abstand zwischen den beiden Temparaturmessstellen und $\Delta t$ die Phasendifferenz der Wärmewelle zwischen den beiden Messstellen.
 \section{Aufbau und Durchf\"{u}hrung}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth ]{Diagramme/v204aufbau.png}
+\caption{Skizze zum Versuchsaufbau}
+\label{aufbau}
+\end{figure}
 Zur Messung der Temparaturen der Metallstäbe ist ein Versuchsaufbau auf einer Grundplatte befestigt. Auf dieser Grundplatte sind vier Metallstäbe angebracht, an denen je zwei Thermoelemente in einem festgelegten Abstand befestigt sind. Ein Peltier-Element kann über seine Unterseite das eine Ende der Metallstäbe simultan erhitzen oder kühlen. Über ein Labornetzteil wird das Peltierelement mit Spannung versorgt, durch die Möglichkeit einer Umpolung kann das Peltier-Element entweder kühlen oder heizen. Die Temparaturen an den acht Thermoelementen werden von einem sogenannten Temparaturarray ausgelesen und per Datenkabel an einen Xplorer GLX \footnote{Kleincomputer zur Datenerfassung und Auswertung mit Druckfunktion für Tabellen und Graphen} gesendet.
 \subsection{Eigenschaften der Metallstäbe}
 Über die viel Metallstäbe sind viele Eigenschaften bekannt. Sie werden in der folgenden Tabelle dargestellt:
@@ -81,20 +87,31 @@ Stoff & Abmessungen [cm] & $\rho \left[ \frac{kg}{m^3} \right] $ & $M [N]$ & $ D
 
 
 \section{Auswertung}
-Hier folgt die Auswertung.
-Das ist eine geeignete Tabelle mit 5 Spalten:
-\begin{table}[h]
+\subsection{Statische Methode}
+
+Bei der ersten Messung wurden die Stäbe mit dem Peltierelement (Spannung $5V$) erhitzt und die Temperaturen an fernen Thermoelementen ($T_1, T_4, T_5, T_8$) gemessen.Die Abbildungen \ref{T1T4} und \ref{T5T8} zeigen diese Temperaturverläufe graphisch. Desweiteren ist zu erkennen, das die Temperaturen nach $700s$ folgende Werte habe.
+
+\begin{tabular}{@{$\bullet$  }ll}
+Messing &$T_1= 42.85 ^\circ C$\\
+Messing &$T_4 =  40.69 ^\circ C$\\
+Aluminum &$T_5 = 44.92 ^\circ C$\\
+Edelstahl &$T_8 =33.17 ^\circ C$\\
+
+\end{tabular}\\
+Dieses Ergebnis zeigt qualitativ, dass Aluminum unter den untersuchten Materialien die höchste Wärmeleitfähigkeit besitzt.
+
+\begin{figure}[H]
+\includegraphics[angle=90, height=\textheight]{Diagramme/Abb1.eps}
+\caption{Temperaturverläufe von zwei Messingstäben}
+\label{T1T4}
+\end{figure}
+
+\begin{figure}[H]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$\varphi[^\circ]$ & $\varphi [rad]$ & $F [N]$ & $M [N]$ & $ D [\frac{Nm}{rad}]$ \\
-\hline
-20.0 & 0.349 & 0.1 & 0.01 & 0.0286\\
-40.0 & 0.698 & 0.2 & 0.02 & 0.0286\\
-\hline
-\end{tabular}
-\caption{Benennung der Tabelle}
-\end{table}
+\includegraphics[angle=90,height=\textheight]{Diagramme/Abb2.eps}
+\caption{Temperaturverläufe von zwei Messingstäben}
+\label{T5T8}
+\end{figure}
 \section{Diskussion}
 Hier kommt die Diskussion hin.
 \section{Literatur- und Abbildungsverzeichnis}
