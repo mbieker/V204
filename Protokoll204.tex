@@ -68,23 +68,29 @@ Hierbei beschreibt $\Delta x$ den Abstand zwischen den beiden Temparaturmessstel
 \label{aufbau}
 \end{figure}
 Zur Messung der Temparaturen der Metallstäbe ist ein Versuchsaufbau auf einer Grundplatte befestigt. Auf dieser Grundplatte sind vier Metallstäbe angebracht, an denen je zwei Thermoelemente in einem festgelegten Abstand befestigt sind. Ein Peltier-Element kann über seine Unterseite das eine Ende der Metallstäbe simultan erhitzen oder kühlen. Über ein Labornetzteil wird das Peltierelement mit Spannung versorgt, durch die Möglichkeit einer Umpolung kann das Peltier-Element entweder kühlen oder heizen. Die Temparaturen an den acht Thermoelementen werden von einem sogenannten Temparaturarray ausgelesen und per Datenkabel an einen Xplorer GLX \footnote{Kleincomputer zur Datenerfassung und Auswertung mit Druckfunktion für Tabellen und Graphen} gesendet.
+In Absprache mit der Versuchsleitung wird zum Heizen der Metallstäbe eine Spannung von 8V angelegt und zur Kühlung eine Spannung von 5V. Aufgrund der geringen Effizienz des Peltierelementes würde dieses beim Kühlen warm werden und so die Kühlwirkung verschlechtern.
 \subsection{Eigenschaften der Metallstäbe}
-Über die viel Metallstäbe sind viele Eigenschaften bekannt. Sie werden in der folgenden Tabelle dargestellt:
+Über die vier Metallstäbe sind viele Eigenschaften bekannt. Sie werden in der folgenden Tabelle dargestellt:
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-Stoff & Abmessungen [cm] & $\rho \left[ \frac{kg}{m^3} \right] $ & $M [N]$ & $ D [\frac{Nm}{rad}]$ \\
+Stoff & Abmessungen [cm] & $\rho \left[ \frac{kg}{m^3} \right] $ & $c \left[ \frac{J}{Kg \cdot K} \right]$ & $ \kappa_{Literatur}$ \\
 \hline
-20.0 & 0.349 & 0.1 & 0.01 & 0.0286\\
-40.0 & 0.698 & 0.2 & 0.02 & 0.0286\\
+Messing (schmal) & 9*0.7*0.4 & 8520 & 385 & ???\\
+Messing (breit) & 9*1.2*0.4 & 8520 & 385 & ???\\
+Aluminium (breit) & 9*1.2*0.4 & 2800 & 830 & ???\\
+Edelstahl (breit) & 9*1.2*0.4 & 8000 & 400 & ???\\
 \hline
 \end{tabular}
 \caption{Eigenschaften der Metallstäbe}
 \end{table}
-
-
-
+\subsection{Statische Methode}
+In diesem Versuchsteil soll die Wärmeleitfähigkeit der verschiedenen Metalle ermittelt werden. Dazu werden die Metallstäbe dauerhaft erwärmt, bis der Edelstahl an Messpunkt T7 eine Temparatur von $45^\circ C$ besitzt. Alle fünf Sekunden werden die Temparaturen gemessen und in Abhändigkeit von der Zeit gespeichert. Zur Bestimmung des Metalles mit der besten Wärmeleitung werden die erreichten Temparaturen nach 700 Sekunden notiert. Nach erfolgreicher Messung werden die Metalstäbe aktiv gekühlt, bis sie eine Temparatur erreichen, die unter $30^\circ C$ liegt.
+\subsection{Dynamische Methode}
+Die dynamische Methode beruht auf dem Angström-Messverfahren. Bei diesem Messverfahren werden die Metallstäbe periodisch erwärmt und gekühlt. Dadurch bildet sich eine Temparaturwelle, die sich durch den Metallstab ausbreitet.
+In den dynamischen Messungen werden die Temparaturen alle zwei Sekunden erfasst.
+Es werden zwei Messreihen durchgeführt, die sich durch verschiedene Periodendauern unterscheiden. Es wird eine Messung mit einer Periodendauer von 80 sek und eine Messung mit einer Periodendauer von 200 sek durchgeführt. Zwischen den beiden Messreihen werden die Metallstäbe ausreichend gekühlt.
 
 \section{Auswertung}
 \subsection{Statische Methode}
@@ -101,14 +107,14 @@ Edelstahl &$T_8 =33.17 ^\circ C$\\
 Dieses Ergebnis zeigt qualitativ, dass Aluminum unter den untersuchten Materialien die höchste Wärmeleitfähigkeit besitzt.
 
 \begin{figure}[H]
-\includegraphics[angle=90, height=\textheight]{Diagramme/Abb1.eps}
+%\includegraphics[angle=90, height=\textheight]{Diagramme/Abb1.eps}
 \caption{Temperaturverläufe von zwei Messingstäben}
 \label{T1T4}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[angle=90,height=\textheight]{Diagramme/Abb2.eps}
+%\includegraphics[angle=90,height=\textheight]{Diagramme/Abb2.eps}
 \caption{Temperaturverläufe von zwei Messingstäben}
 \label{T5T8}
 \end{figure}
