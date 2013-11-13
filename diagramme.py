@@ -8,6 +8,7 @@ Created on Mon Nov 11 22:54:05 2013
 from pylab import *
 from scipy import  *
 from uncertainties import *
+import uncertainties.umath as um
 
 def make_LaTeX_table(data,header, flip= 'false', onedim = 'false'):
     output = '\\begin{tabular}{'
@@ -150,9 +151,32 @@ T2_0= maxmin(t,T2)
 T5_0= maxmin(t,T5)
 T6_0= maxmin(t,T6)
 
-to_table = array([[T1_0[0][i],T1_0[1][i],T2_0[0][i],T2_0[1][i]] for i in range(2,19)])
+print(T1_0)
+print(T2_0)
+to_table = array([[T1_0[0][i+2],T1_0[1][i+2],T2_0[0][i],T2_0[1][i]] for i in range(0,19)])
 print(make_LaTeX_table(to_table, ['cc','cdc','dsf','sdx'], ))
 
+offset = []
+for i in range(0,19):
+    offset.append( T1_0[0][i+2]-T2_0[0][i])
+
+offset = err(array(offset))
+waveleng = 0.03* 80/offset
+print('Wellenlaenge Messing: %s' % waveleng)
+amplitude = []
+for i in range (3,len(T1_0[0])):
+    amplitude.append(abs(T1_0[1][i-1]-T1_0[1][i]))
+amplitude_f = 0.5* err(array(amplitude))
+print('Amlitude fern : %s' % amplitude_f)
+waveleng = 0.03* 80/offset
+amplitude = []
+for i in range (0,len(T2_0[0])):
+    amplitude.append(abs(T2_0[1][i-1]-T2_0[1][i]))
+amplitude_n = 0.5* err(array(amplitude))
+print('Amlitude nah : %s' % amplitude_n)
+
+kappa = 8520*385*(0.03)**2/(2*offset* um.math.log(amplitude_n.nominal_value/amplitude_f.nominal_value))
+print('Kappa Messing = %s' % kappa)
 plot(T1_0[0],T1_0[1], 'x' )
 plot(T2_0[0],T2_0[1], 'o')
 plot(t,T1, label='Messing fern')
@@ -160,6 +184,7 @@ plot(t,T2, label= 'Messing nah')
 xlabel(r'Zeit - [s]')
 ylabel(r'Temperatur - [$^\circ C$]')
 legend()
+show()
 savefig('Diagramme/dyn_messing.png')
 close()
 plot(T5_0[0],T5_0[1], 'x' )
