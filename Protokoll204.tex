@@ -55,7 +55,7 @@ Die Phasengeschwindigkeit der Welle ist gegeben mit
 \begin{equation}
 v = \frac{w}{k} = \frac{w}{\sqrt{\frac{w \rho c}{2 \kappa}}} = \sqrt{\frac{2 \kappa w}{\rho c}}
 \end{equation}
-Mithilfe der Dämpfung, die aus dem Verhältnis $\frac{A_{nah}}{A_fern}$ folgt, und der Ausdrücke $w = \frac{2 \pi}{T^*}$ ($T^*$ steht für die Periodendauer, nicht für eine Temparatur) und $\Phi = 2 \pi \frac{\Delta t}{T^*}$ folgt für die Wärmeleitfähigkeit
+Mithilfe der Dämpfung, die aus dem Verhältnis $\frac{A_{nah}}{A_{fern}}$ folgt, und der Ausdrücke $w = \frac{2 \pi}{T^*}$ ($T^*$ steht für die Periodendauer, nicht für eine Temparatur) und $\Phi = 2 \pi \frac{\Delta t}{T^*}$ folgt für die Wärmeleitfähigkeit
 \begin{equation}
 \kappa = \frac{\rho c (\Delta x)^2}{2 \Delta t ln(\frac{A_{nah}}{A_{fern}})}
 \end{equation}
@@ -77,10 +77,10 @@ In Absprache mit der Versuchsleitung wird zum Heizen der Metallstäbe eine Spann
 \hline
 Stoff & Abmessungen [cm] & $\rho \left[ \frac{kg}{m^3} \right] $ & $c \left[ \frac{J}{Kg \cdot K} \right]$ & $ \kappa_{Literatur}$ \\
 \hline
-Messing (schmal) & 9*0.7*0.4 & 8520 & 385 & ???\\
-Messing (breit) & 9*1.2*0.4 & 8520 & 385 & ???\\
-Aluminium (breit) & 9*1.2*0.4 & 2800 & 830 & ???\\
-Edelstahl (breit) & 9*1.2*0.4 & 8000 & 400 & ???\\
+Messing (schmal) & 9*0.7*0.4 & 8520 & 385 & 81...105\\
+Messing (breit) & 9*1.2*0.4 & 8520 & 385 & 81...105\\
+Aluminium (breit) & 9*1.2*0.4 & 2800 & 830 & 200\\
+Edelstahl (breit) & 9*1.2*0.4 & 8000 & 400 & 21\\
 \hline
 \end{tabular}
 \caption{Eigenschaften der Metallstäbe}
@@ -90,7 +90,7 @@ In diesem Versuchsteil soll die Wärmeleitfähigkeit der verschiedenen Metalle e
 \subsection{Dynamische Methode}
 Die dynamische Methode beruht auf dem Angström-Messverfahren. Bei diesem Messverfahren werden die Metallstäbe periodisch erwärmt und gekühlt. Dadurch bildet sich eine Temparaturwelle, die sich durch den Metallstab ausbreitet.
 In den dynamischen Messungen werden die Temparaturen alle zwei Sekunden erfasst.
-Es werden zwei Messreihen durchgeführt, die sich durch verschiedene Periodendauern unterscheiden. Es wird eine Messung mit einer Periodendauer von 80 sek und eine Messung mit einer Periodendauer von 200 sek durchgeführt. Zwischen den beiden Messreihen werden die Metallstäbe ausreichend gekühlt.
+Es werden zwei Messreihen durchgeführt, die sich durch verschiedene Periodendauern unterscheiden. Es wird eine Messung mit einer Periodendauer von 80 Sekunden und eine Messung mit einer Periodendauer von 200 Sekunden durchgeführt. Zwischen den beiden Messreihen werden die Metallstäbe ausreichend gekühlt.
 
 \section{Auswertung}
 \subsection{Statische Methode}
@@ -105,21 +105,25 @@ Edelstahl &$T_8 =33.17 ^\circ C$\\
 
 \end{tabular}\\
 Dieses Ergebnis zeigt qualitativ, dass Aluminum unter den untersuchten Materialien die höchste Wärmeleitfähigkeit besitzt.
-
-\begin{figure}[H]
+\begin{figure}[h]
 %\includegraphics[angle=90, height=\textheight]{Diagramme/Abb1.eps}
 \caption{Temperaturverläufe von zwei Messingstäben}
 \label{T1T4}
 \end{figure}
-
-\begin{figure}[H]
+\newline
+Abbildung 2 zeigt die Temperaturverläufe der beiden Messingstäbe. Die beiden Graphen unterscheiden sich in der Form zunächst recht wenig. Bei $t_0$=0 haben sie eine identische Temperatur. Auch ist die Steigung der beide Graphen zu einem identischen, frühen Zeitpunkt der Erhitzung am größten. Danach nimmt sie kontinuierlich ab. Beide Graphen scheinen zu konvergieren.\newline
+Die Graphen unterscheiden sich lediglich im Zahlenwert der Steigung. So hat der breite Messingstab eine leicht höhere Steigung. Aus dieser folgt, dass der Graph der Messung des breiten Messingstabs immer höhere Werte hat und sich die Graphen für die gesamte Messung immer weiter voneinander entfernen.
+Es lässt sich also aus der Abbildung 2 entnehmen, dass ein breiter Metallstab Wärme besser leitet als ein schmalerer.
+\begin{figure}[h]
 \centering
 %\includegraphics[angle=90,height=\textheight]{Diagramme/Abb2.eps}
 \caption{Temperaturverläufe von zwei Messingstäben}
 \label{T5T8}
 \end{figure}
+\newline
+Die Graphen aus Abbildung 3 weisen deutlichere Unterschiede auf. Der Graph des Aluminiumstabes hat eine deutlich höhere Steigung. Auch erreicht die Steigung beim Aluminiumstab schnell ihr Maximum. Insgesamt erinnert der Graph des Aluminiums an die Graphen des Messings. Der Edelstahlstab hingegen scheint die Wärme viel schlechter zu leiten. Auch sein Graph scheint zu konvergieren, allerdings erreicht der Graph seinen Wendepunkt deutlich später als bei den anderen Metallen.
 \subsection{Dynamische Methode}
-Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Periodendauer von 80 (bzw. 200)  Sekunden abwechselnd gek\"uhlt und erhitzt. Die Abblidungen \ref{dyn_messing}, \ref{dyn_alu} und \ref{dyn_stahl} zeigen jeweils den Temperaturverlauf an zwei $3.0cm$ voneindander entfernten Messstellen. Im Folgenden werden f\"ur die einzelnen Materialien die Ausbreitungsgeschwindigkeit und die Wellenl\"ange der Temperaturwelle und die W\"armeleitf\"ahigkeit nach der Angstr\"om-Methode berechnet.
+Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Periodendauer von 80 (bzw. 200)  Sekunden abwechselnd gek\"uhlt und erhitzt. Die Abbildungen \ref{dyn_messing}, \ref{dyn_alu} und \ref{dyn_stahl} zeigen jeweils den Temperaturverlauf an zwei 3.0$cm$ voneinander entfernten Messstellen. Im Folgenden werden f\"ur die einzelnen Materialien die Ausbreitungsgeschwindigkeit und die Wellenl\"ange der Temperaturwelle und die W\"armeleitf\"ahigkeit nach der Angstr\"om-Methode berechnet.
 
 \begin{figure}[htp]
 \centering
@@ -130,13 +134,13 @@ Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Period
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{Diagramme/dyn_alu.png}
-\caption{Dynamsiche Messung Aluminium}
+\caption{Dynamische Messung Aluminium}
 \label{dyn_alu}
 \end{figure}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{Diagramme/dyn_stahl.png}
-\caption{Dynamsiche Messung Stahl}
+\caption{Dynamische Messung Stahl}
 \label{dyn_stahl}
 \end{figure}\noindent
 Die Wellenl\"ange $\lambda$ einer Welle ist durch
