@@ -7,6 +7,7 @@
 \usepackage{inputenc}
 \usepackage{graphicx}
 \usepackage{selinput}
+\usepackage{here}
 \SelectInputMappings{%
 adieresis={ä},
 germandbls={ß},
@@ -57,6 +58,7 @@ v = \frac{w}{k} = \frac{w}{\sqrt{\frac{w \rho c}{2 \kappa}}} = \sqrt{\frac{2 \ka
 \end{equation}
 Mithilfe der Dämpfung, die aus dem Verhältnis $\frac{A_{nah}}{A_{fern}}$ folgt, und der Ausdrücke $w = \frac{2 \pi}{T^*}$ ($T^*$ steht für die Periodendauer, nicht für eine Temparatur) und $\Phi = 2 \pi \frac{\Delta t}{T^*}$ folgt für die Wärmeleitfähigkeit
 \begin{equation}
+\label{kappa}
 \kappa = \frac{\rho c (\Delta x)^2}{2 \Delta t ln(\frac{A_{nah}}{A_{fern}})}
 \end{equation}
 Hierbei beschreibt $\Delta x$ den Abstand zwischen den beiden Temparaturmessstellen und $\Delta t$ die Phasendifferenz der Wärmewelle zwischen den beiden Messstellen.
@@ -79,8 +81,8 @@ Stoff & Abmessungen [cm] & $\rho \left[ \frac{kg}{m^3} \right] $ & $c \left[ \fr
 \hline
 Messing (schmal) & 9*0.7*0.4 & 8520 & 385 & 81...105\\
 Messing (breit) & 9*1.2*0.4 & 8520 & 385 & 81...105\\
-Aluminium (breit) & 9*1.2*0.4 & 2800 & 830 & 200\\
-Edelstahl (breit) & 9*1.2*0.4 & 8000 & 400 & 21\\
+Aluminium  & 9*1.2*0.4 & 2800 & 830 & 200\\
+Edelstahl &9*1.2*0.4 & 8000 & 400 & 21\\
 \hline
 \end{tabular}
 \caption{Eigenschaften der Metallstäbe}
@@ -125,19 +127,19 @@ Die Graphen aus Abbildung 3 weisen deutlichere Unterschiede auf. Der Graph des A
 \subsection{Dynamische Methode}
 Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Periodendauer von 80 (bzw. 200)  Sekunden abwechselnd gek\"uhlt und erhitzt. Die Abbildungen \ref{dyn_messing}, \ref{dyn_alu} und \ref{dyn_stahl} zeigen jeweils den Temperaturverlauf an zwei 3.0$cm$ voneinander entfernten Messstellen. Im Folgenden werden f\"ur die einzelnen Materialien die Ausbreitungsgeschwindigkeit und die Wellenl\"ange der Temperaturwelle und die W\"armeleitf\"ahigkeit nach der Angstr\"om-Methode berechnet.
 
-\begin{figure}[htp]
+\begin{figure}[P]
 \centering
 \includegraphics[width=\textwidth]{Diagramme/dyn_messing.png}
 \caption{Dynamische Messung Messing}
 \label{dyn_messing}
 \end{figure}
-\begin{figure}[htp]
+\begin{figure}[P]
 \centering
 \includegraphics[width=\textwidth]{Diagramme/dyn_alu.png}
 \caption{Dynamische Messung Aluminium}
 \label{dyn_alu}
 \end{figure}
-\begin{figure}[htp]
+\begin{figure}[P]
 \centering
 \includegraphics[width=\textwidth]{Diagramme/dyn_stahl.png}
 \caption{Dynamische Messung Stahl}
@@ -145,13 +147,13 @@ Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Period
 \end{figure}\noindent
 Die Wellenl\"ange $\lambda$ einer Welle ist durch
 \begin{equation}
+\label{wl}
 \lambda = \frac{v}{f} = v\cdot T^* = \frac{\Delta x\cdot  T^* }{\Delta t}
 \end{equation}
 gegeben. Dabei ist $\Delta x$ der Abstand der beiden Messpunkte, $T^*$ die Periodendauer und $\Delta t$ der Phasendifferenz der Welle. Zur Bestimmung von $\Delta t$ wurden ein den Abbilungen die (lokalen) Extrema des Temperaturverlaufsgekennzeichnet. Desweiteren sind diese Punkte in den Tabellen \ref{messing_extr}, \ref{alu_extr} und \ref{stahl_extr} finden.
-\begin{table}
+\begin{table}[P]
 \centering
 \label{messing_extr}
-
 \begin{tabular}{c|c||c|c|}
 \multicolumn{2}{c||}{Nah} & \multicolumn{2}{c}{Fern}\\
 $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
@@ -178,6 +180,87 @@ $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
 \end{tabular}
 \caption{Extremwerte der Temperaturwelle in Messing}
 \end{table}
+
+\begin{table}[P]
+\centering
+\label{alu_extr}
+\begin{tabular}{c|c||c|c}
+\multicolumn{2}{c||}{Nah} & \multicolumn{2}{c}{Fern}\\
+$t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
+\hline
+46.0 & 30.7 & 60.0 & 27.72\\
+86.0 & 27.16 & 90.0 & 27.05\\
+126.0 & 35.17 & 136.0 & 32.27\\
+166.0 & 30.7 & 170.0 & 30.8\\
+206.0 & 38.04 & 214.0 & 35.23\\
+246.0 & 33.26 & 250.0 & 33.41\\
+286.0 & 40.33 & 294.0 & 37.52\\
+326.0 & 35.31 & 330.0 & 35.49\\
+366.0 & 42.24 & 374.0 & 39.43\\
+406.0 & 37.06 & 412.0 & 37.32\\
+446.0 & 43.85 & 454.0 & 41.04\\
+486.0 & 38.58 & 492.0 & 38.82\\
+526.0 & 45.18 & 534.0 & 42.38\\
+566.0 & 39.82 & 572.0 & 40.05\\
+606.0 & 46.3 & 614.0 & 43.51\\
+646.0 & 40.92 & 652.0 & 41.15\\
+686.0 & 47.45 & 694.0 & 44.59\\
+726.0 & 41.96 & 732.0 & 42.19\\
+766.0 & 48.4 & 774.0 & 45.57\\
+
+\end{tabular}
+\caption{Extremwerte der Temperaturwelle in Aluminium}
+\end{table}
+ $\Delta t$ ist nun die Zeit zum Beispiel ein Maximum benötigt, um einer Thermosonde zur Anderen zu gelangen, also
+\begin{equation}
+\Delta t = t_{Fern} - t_{Nah}
+\end{equation}
+Zur genauerenbestimmung dieser Größe wird der Mittelwert über mehrere Perioden 
+\begin{equation}
+\overline{\Delta t} = \frac1N \sum^N (t_{Fern}-t_{Nah})
+\end{equation}
+berechnet. Für die verschiedenen Metalle ergiben sich die fogenden Werte:
+\begin{itemize}
+\item$\Delta t_{Messing} (12.0\pm1.1)s$
+\item $\Delta t_{Aluminium} = (7.1\pm-0.6)s$
+\item $\Delta t_{Edelstahl} =  22$
+\end{itemize}
+Die ersten beiden Metalle wurden mit einer Periodendauer $T^*$ von $80s$ angeregt und der Edelstahlstab mit einer Periodendauer von $200s$ und die Thermoelemente sind $\Delta x = 0.03m$ vondeinander entfernt. \\Mit Formel (\ref{wl}) können nun die Wellenlängen der einzelnen Temperaturwellen berechnet werden. 
+\begin{itemize}
+\item $\lambda_{Messing}=(0.200\pm0.018)m$
+\item $\lambda_{Aluminium}=(0.340\pm0.027)m$
+\item $\lambda_{Edelstahl}=()m$
+\end{itemize}
+Zur Berechnung der Temperaturleitfähikeit nach der Angströmmethode wird noch das Amplitudenverhältnis $\frac{A_{Nah}}{A_{Fern}}$ benötigt. Die Amplitude einer Welle entspricht der Hälfte der Differenz der Temperatur zwischem einem Wellenberg ($T_{Max}$) und einem Benachbarten Wellental ($T_{Min}$):
+\begin{equation}
+A = \frac12\cdot(T_{Max}-T_{Min})
+\end{equation}
+Analog zu oben wird der Mittelwert
+\begin{equation}
+\bar {A} = \frac1{2N} \sum^N (T_{Max}-T_{Min})
+\end{equation}
+über mehrere Perioden gebildet. Mit den Werten aus den Tabellen \ref{messing_extr}, \ref{alu_extr} und \ref{stahl_extr} ergeben sich für die Amplituden:
+\begin{table}[H]
+\centering
+\begin{tabular}{c|l|l}
+	& $A_{Nah}[^\circ C]$ & $A_{Fern}[^\circ C]$\\
+	\hline
+	Messing&$2.85\pm0.34 $& $0.83\pm0.13$ \\
+	Aluminium & $3.27\pm0.34$ & $1.46\pm0.14$\\
+	Edelstahl & $ $ &   $ $\\
+\end{tabular}
+\end{table}\noindent
+\begin{table}[H]
+
+\end{table}\noindent
+Mit Gleichung (\ref{kappa}) können dann folgende Werte für die Temperaturleitfähigkeit von Messing, Aluminium und Messing errechnet werden. df
+\begin{itemize}
+\item $\kappa_{Messing} = (100\pm9)\frac{W}{m K}$
+\item $\kappa_{Aluminium} = (184\pm15)\frac{W}{m K}$
+\item $\kappa_{Edelstahl} = (100\pm9)\frac{W}{m K}$
+\end{itemize}
+
+
 \section{Diskussion}
 Hier kommt die Diskussion hin.
 \section{Literatur- und Abbildungsverzeichnis}
