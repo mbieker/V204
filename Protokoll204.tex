@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{selinput}
 \usepackage{here}
-\SelectInputMappings{%
+\SelectInputMappings{
 adieresis={ä},
 germandbls={ß},
 }
@@ -124,6 +124,10 @@ Es lässt sich also aus der Abbildung 2 entnehmen, dass ein breiter Metallstab W
 \end{figure}
 Die Graphen aus Abbildung 3 weisen deutlichere Unterschiede auf. Der Graph des Aluminiumstabes hat eine deutlich höhere Steigung. Auch erreicht die Steigung beim Aluminiumstab schnell ihr Maximum. Insgesamt erinnert der Graph des Aluminiums an die Graphen des Messings. Der Edelstahlstab hingegen scheint die Wärme viel schlechter zu leiten. Auch sein Graph scheint zu konvergieren, allerdings erreicht der Graph seinen Wendepunkt deutlich später als bei den anderen Metallen.
 
+Die Abbildungen ?? und ?? zeigen jeweils den Temperaturunterschied zwischen der ersten und zweiten Messstelle eines Metallstabes. Die Abbildung ?? zeigt diesen Unterschied für den Messingstab und Abbildung ?? den Unterschied für Edelstahl.
+Beide Graphen erreichen nach einer bestimmten Zeit ihr Maximum, der Graph des Messings nach ca. 60 Sekunden und der Graph des Edelstahls nach ca. 500 Sekunden. Nach dem Maximum fallen beide Graphen wieder. Ein eindeutiger Unterschied der beiden Graphen liegt in der Umgebung der Maxima, denn beim Edelstahl ist die Umgebung des Maximums viel flacher ausgeprägt als beim Messing, d.h. beim Graphen des Edelstahls bildet sich eine Art Plateau, während sich die Temperaturdifferenz beim Messing schnell wieder verringert. Die Graphen zeigen, dass sich beim Messing die Temparatur zwischen dem ersten und zweiten Messpunkt deutlich schneller angleicht als beim Edelstahl. Auch dies weist darauf hin, dass der Messingstab eine bessere Wärmeleitung hat als der Edelstahl.
+
+
 \subsection{Dynamische Methode}
 Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Periodendauer von 80 (bzw. 200)  Sekunden abwechselnd gek\"uhlt und erhitzt. Die Abbildungen \ref{dyn_messing}, \ref{dyn_alu} und \ref{dyn_stahl} zeigen jeweils den Temperaturverlauf an zwei 3.0$cm$ voneinander entfernten Messstellen. Im Folgenden werden f\"ur die einzelnen Materialien die Ausbreitungsgeschwindigkeit und die Wellenl\"ange der Temperaturwelle und die W\"armeleitf\"ahigkeit nach der Angstr\"om-Methode berechnet.
 
@@ -150,7 +154,7 @@ Die Wellenl\"ange $\lambda$ einer Welle ist durch
 \label{wl}
 \lambda = \frac{v}{f} = v\cdot T^* = \frac{\Delta x\cdot  T^* }{\Delta t}
 \end{equation}
-gegeben. Dabei ist $\Delta x$ der Abstand der beiden Messpunkte, $T^*$ die Periodendauer und $\Delta t$ der Phasendifferenz der Welle. Zur Bestimmung von $\Delta t$ wurden ein den Abbilungen die (lokalen) Extrema des Temperaturverlaufsgekennzeichnet. Desweiteren sind diese Punkte in den Tabellen \ref{messing_extr}, \ref{alu_extr} und \ref{stahl_extr} finden.
+gegeben. Dabei ist $\Delta x$ der Abstand der beiden Messpunkte, $T^*$ die Periodendauer und $\Delta t$ der Phasendifferenz der Welle. Zur Bestimmung von $\Delta t$ wurden in den Abbilungen die (lokalen) Extrema des Temperaturverlaufs gekennzeichnet. Desweiteren sind diese Punkte in den Tabellen \ref{messing_extr}, \ref{alu_extr} und \ref{stahl_extr} zu finden.
 \begin{table}[P]
 \centering
 \label{messing_extr}
@@ -167,7 +171,7 @@ $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
 304.0 & 33.78 & 368.0 & 39.33\\
 334.0 & 33.12 & 406.0 & 35.07\\
 382.0 & 35.76 & 448.0 & 41.00\\
-414.0 & 34.98s & 486.0 & 36.66\\
+414.0 & 34.98 & 486.0 & 36.66\\
 462.0 & 37.46 & 528.0 & 42.42\\
 496.0 & 36.60 & 566.0 & 37.98\\
 542.0 & 38.92 & 608.0 & 43.62\\
@@ -235,17 +239,17 @@ $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
 \begin{equation}
 \Delta t = t_{Fern} - t_{Nah}
 \end{equation}
-Zur genauerenbestimmung dieser Größe wird der Mittelwert über mehrere Perioden 
+Zur genaueren Bestimmung dieser Größe wird der Mittelwert über mehrere Perioden 
 \begin{equation}
 \overline{\Delta t} = \frac1N \sum^N (t_{Fern}-t_{Nah})
 \end{equation}
-berechnet. Für die verschiedenen Metalle ergiben sich die fogenden Werte:
+berechnet. Für die verschiedenen Metalle ergeben sich die folgenden Werte:
 \begin{itemize}
 \item$\Delta t_{Messing} (12.0\pm1.1)s$
 \item $\Delta t_{Aluminium} = (7.1\pm-0.6)s$
 \item $\Delta t_{Edelstahl} =  (53\pm5)s$
 \end{itemize}
-Die ersten beiden Metalle wurden mit einer Periodendauer $T^*$ von $80s$ angeregt und der Edelstahlstab mit einer Periodendauer von $200s$ und die Thermoelemente sind $\Delta x = 0.03m$ vondeinander entfernt. \\Mit Formel (\ref{wl}) können nun die Wellenlängen der einzelnen Temperaturwellen berechnet werden. 
+Die ersten beiden Metalle wurden mit einer Periodendauer $T^*$ von $80s$ angeregt und der Edelstahlstab mit einer Periodendauer von $200s$. Die Thermoelemente sind $\Delta x = 0.03m$ vondeinander entfernt. \\Mit Formel (\ref{wl}) können nun die Wellenlängen der einzelnen Temperaturwellen berechnet werden. 
 \begin{itemize}
 \item $\lambda_{Messing}=(0.200\pm0.018)m$
 \item $\lambda_{Aluminium}=(0.340\pm0.027)m$
@@ -273,7 +277,7 @@ Analog zu oben wird der Mittelwert
 \begin{table}[H]
 
 \end{table}\noindent
-Mit Gleichung (\ref{kappa}) können dann folgende Werte für die Temperaturleitfähigkeit von Messing, Aluminium und Messing errechnet werden. df
+Mit Gleichung (\ref{kappa}) können dann folgende Werte für die Temperaturleitfähigkeit von Messing, Aluminium und Messing errechnet werden.
 \begin{itemize}
 \item $\kappa_{Messing} = (100\pm9)\frac{W}{m K}$
 \item $\kappa_{Aluminium} = (184\pm15)\frac{W}{m K}$
@@ -282,7 +286,8 @@ Mit Gleichung (\ref{kappa}) können dann folgende Werte für die Temperaturleitf
 Dieses Ergebnis bestätigt die Beobachtungen bei der statischen Messung und zeigt das Aluminum unter den untersuchten Metallen die höchste Wärmeleitfähigkeit hat.
 
 \section{Diskussion}
-Hier kommt die Diskussion hin.
+Die automatische Messung durch den Xplorer GLX ermöglicht eine genaue Messung der Temperaturen, ohne menschliche Einflüsse und Ungenauigkeiten, die zum Beispiel bei der Betätigung einer Stoppuhr auftreten. Leider erwies sich der Xplorer GLX als nicht sehr zuverlässig. So ist er nach der ersten dynamischen Messung abgestürzt und hat alle aufgezeichneten Werte gelöscht.
+Bei einem Blick auf die aus den exportierten Datensätzen erstellten Graphen fallen sofort einige Stellen auf, an denen der Xplorer GLX falsche Werte ausgegeben hat. Dabei scheint es sich nicht um einen Anwendungsfehler zu handeln, sondern um eine Fehlfunktion des Gerätes selber.
 \section{Literatur- und Abbildungsverzeichnis}
 Hier befindet sich das Literatur- und Abbildungsverzeichnis.
 \section{Anhang}
