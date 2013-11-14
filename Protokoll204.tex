@@ -107,23 +107,23 @@ Edelstahl &$T_8 =33.17 ^\circ C$\\
 
 \end{tabular}\\
 Dieses Ergebnis zeigt qualitativ, dass Aluminum unter den untersuchten Materialien die höchste Wärmeleitfähigkeit besitzt.
-\begin{figure}[h]
-%\includegraphics[angle=90, height=\textheight]{Diagramme/Abb1.eps}
-\caption{Temperaturverläufe von zwei Messingstäben}
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{Diagramme/Abb1.pdf}
+\caption{Temperaturverlauf Messing}
 \label{T1T4}
 \end{figure}
-\newline
 Abbildung 2 zeigt die Temperaturverläufe der beiden Messingstäbe. Die beiden Graphen unterscheiden sich in der Form zunächst recht wenig. Bei $t_0$=0 haben sie eine identische Temperatur. Auch ist die Steigung der beide Graphen zu einem identischen, frühen Zeitpunkt der Erhitzung am größten. Danach nimmt sie kontinuierlich ab. Beide Graphen scheinen zu konvergieren.\newline
 Die Graphen unterscheiden sich lediglich im Zahlenwert der Steigung. So hat der breite Messingstab eine leicht höhere Steigung. Aus dieser folgt, dass der Graph der Messung des breiten Messingstabs immer höhere Werte hat und sich die Graphen für die gesamte Messung immer weiter voneinander entfernen.
 Es lässt sich also aus der Abbildung 2 entnehmen, dass ein breiter Metallstab Wärme besser leitet als ein schmalerer.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-%\includegraphics[angle=90,height=\textheight]{Diagramme/Abb2.eps}
+\includegraphics[width = \textwidth]{Diagramme/Abb2.pdf}
 \caption{Temperaturverläufe von zwei Messingstäben}
 \label{T5T8}
 \end{figure}
-\newline
 Die Graphen aus Abbildung 3 weisen deutlichere Unterschiede auf. Der Graph des Aluminiumstabes hat eine deutlich höhere Steigung. Auch erreicht die Steigung beim Aluminiumstab schnell ihr Maximum. Insgesamt erinnert der Graph des Aluminiums an die Graphen des Messings. Der Edelstahlstab hingegen scheint die Wärme viel schlechter zu leiten. Auch sein Graph scheint zu konvergieren, allerdings erreicht der Graph seinen Wendepunkt deutlich später als bei den anderen Metallen.
+
 \subsection{Dynamische Methode}
 Bei der ersten Dynamischen wurden die zu untersuchenden St\"abe mit einer Periodendauer von 80 (bzw. 200)  Sekunden abwechselnd gek\"uhlt und erhitzt. Die Abbildungen \ref{dyn_messing}, \ref{dyn_alu} und \ref{dyn_stahl} zeigen jeweils den Temperaturverlauf an zwei 3.0$cm$ voneinander entfernten Messstellen. Im Folgenden werden f\"ur die einzelnen Materialien die Ausbreitungsgeschwindigkeit und die Wellenl\"ange der Temperaturwelle und die W\"armeleitf\"ahigkeit nach der Angstr\"om-Methode berechnet.
 
@@ -154,10 +154,9 @@ gegeben. Dabei ist $\Delta x$ der Abstand der beiden Messpunkte, $T^*$ die Perio
 \begin{table}[P]
 \centering
 \label{messing_extr}
-\begin{tabular}{c|c||c|c|}
+\begin{tabular}{c|c||c|c}
 \multicolumn{2}{c||}{Nah} & \multicolumn{2}{c}{Fern}\\
 $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
-\hline
 \hline
 72.0 & 25.06 & 128.0 & 32.29\\
 90.0 & 24.96 & 166.0 & 28.61\\
@@ -175,8 +174,7 @@ $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
 576.0 & 37.95 & 646.0 & 39.13\\
 620.0 & 40.16 & 688.0 & 44.78\\
 656.0 & 39.11 & 726.0 & 40.2\\
-700.0 & 41.26 & 768.0 & 45.76\\
-\hline
+
 \end{tabular}
 \caption{Extremwerte der Temperaturwelle in Messing}
 \end{table}
@@ -211,6 +209,28 @@ $t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
 \end{tabular}
 \caption{Extremwerte der Temperaturwelle in Aluminium}
 \end{table}
+
+\begin{table}[P]
+\centering
+\label{stahl_extr}
+\begin{tabular}{c|c||c|c}
+\multicolumn{2}{c||}{Nah} & \multicolumn{2}{c}{Fern}\\
+$t[s]$ & $T[^\circ C]$ & $t[s]$ & $T[^\circ C]$ \\
+\hline
+104.0 & 39.78 & 170.0 & 28.98\\
+202.0 & 28.84 & 240.0 & 28.58\\
+304.0 & 45.59 & 372.0 & 32.18\\
+402.0 & 34.5 & 440.0 & 31.95\\
+504.0 & 50.17 & 574.0 & 35.47\\
+604.0 & 38.49 & 638.0 & 35.08\\
+704.0 & 54.25 & 770.0 & 38.44\\
+804.0 & 41.87 & 842.0 & 37.94\\
+904.0 & 56.95 & 968.0 & 40.94\\
+1004.0 & 44.29 & 1042.0 & 40.25\\
+1104.0 & 59.01 & 1166.0 & 42.98\\
+\end{tabular}
+\caption{Extremwerte der Temperaturwelle in Edelstahl}
+\end{table}
  $\Delta t$ ist nun die Zeit zum Beispiel ein Maximum benötigt, um einer Thermosonde zur Anderen zu gelangen, also
 \begin{equation}
 \Delta t = t_{Fern} - t_{Nah}
@@ -223,13 +243,13 @@ berechnet. Für die verschiedenen Metalle ergiben sich die fogenden Werte:
 \begin{itemize}
 \item$\Delta t_{Messing} (12.0\pm1.1)s$
 \item $\Delta t_{Aluminium} = (7.1\pm-0.6)s$
-\item $\Delta t_{Edelstahl} =  22$
+\item $\Delta t_{Edelstahl} =  (53\pm5)s$
 \end{itemize}
 Die ersten beiden Metalle wurden mit einer Periodendauer $T^*$ von $80s$ angeregt und der Edelstahlstab mit einer Periodendauer von $200s$ und die Thermoelemente sind $\Delta x = 0.03m$ vondeinander entfernt. \\Mit Formel (\ref{wl}) können nun die Wellenlängen der einzelnen Temperaturwellen berechnet werden. 
 \begin{itemize}
 \item $\lambda_{Messing}=(0.200\pm0.018)m$
 \item $\lambda_{Aluminium}=(0.340\pm0.027)m$
-\item $\lambda_{Edelstahl}=()m$
+\item $\lambda_{Edelstahl}=(0.113\pm0.010)m$
 \end{itemize}
 Zur Berechnung der Temperaturleitfähikeit nach der Angströmmethode wird noch das Amplitudenverhältnis $\frac{A_{Nah}}{A_{Fern}}$ benötigt. Die Amplitude einer Welle entspricht der Hälfte der Differenz der Temperatur zwischem einem Wellenberg ($T_{Max}$) und einem Benachbarten Wellental ($T_{Min}$):
 \begin{equation}
@@ -247,7 +267,7 @@ Analog zu oben wird der Mittelwert
 	\hline
 	Messing&$2.85\pm0.34 $& $0.83\pm0.13$ \\
 	Aluminium & $3.27\pm0.34$ & $1.46\pm0.14$\\
-	Edelstahl & $ $ &   $ $\\
+	Edelstahl & $ 5.2\pm1.3 $ &   $0.92\pm0.24 $\\
 \end{tabular}
 \end{table}\noindent
 \begin{table}[H]
@@ -257,9 +277,9 @@ Mit Gleichung (\ref{kappa}) können dann folgende Werte für die Temperaturleitf
 \begin{itemize}
 \item $\kappa_{Messing} = (100\pm9)\frac{W}{m K}$
 \item $\kappa_{Aluminium} = (184\pm15)\frac{W}{m K}$
-\item $\kappa_{Edelstahl} = (100\pm9)\frac{W}{m K}$
+\item $\kappa_{Edelstahl} = (15.7\pm-1.4)\frac{W}{m K}$
 \end{itemize}
-
+Dieses Ergebnis bestätigt die Beobachtungen bei der statischen Messung und zeigt das Aluminum unter den untersuchten Metallen die höchste Wärmeleitfähigkeit hat.
 
 \section{Diskussion}
 Hier kommt die Diskussion hin.

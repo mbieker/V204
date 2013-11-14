@@ -66,11 +66,11 @@ def err(data):
     return ufloat(mean,err)
 
 
-'''
+
 run1 = loadtxt('Messwerte/run1', unpack='true')
 t, T1,T2, T3, T4 = loadtxt('Messwerte/t1t4_run1', unpack="true")
 t, T5, T6, T7, T8 = loadtxt('Messwerte/t5t8_run1', unpack = 'true')
-run1[0] *= 5 # Abtastrate von 1 Meswert pro 5sec
+t*= 5 # Abtastrate von 1 Meswert pro 5sec
 
 
 liney = linspace(20,50)
@@ -84,7 +84,7 @@ plot(t,T4, label= "T4 - Messingstab (schmal)")
 plot(linex,liney,'r--')
 legend(loc='lower right')
 show()
-savefig('Diagramme/Abb1.eps')
+savefig('Diagramme/Abb1.pdf')
 close()
 #Set Up Plot
 xlabel(r'Zeit [s]')
@@ -94,20 +94,21 @@ plot(t,T8,'', label= "T8 - Edelstal")
 plot(linex,liney,'r--')
 legend(loc='lower right')
 show()
-savefig('Diagramme/Abb2.eps')
+savefig('Diagramme/Abb2.pdf')
 
 close()
-for i in range(0,5):
-print(run1[i][139])
 
 t, T1,T2, T3, T4 = loadtxt('Messwerte/t1t4_run1', unpack="true")
 t, T5, T6, T7, T8 = loadtxt('Messwerte/t5t8_run1', unpack = 'true')
 plot(t, T2- run1[1], label ='T2 - T1')
-plot(t,T7-run1[4], label='T7-T8')
+plot(t,T7-run1[4], label='T7 - T8')
+xlabel(r'Zeit [s]')
+ylabel(r'Temperatur - [$^\circ C$]')
 legend()
+savefig('Diagramme/Abb3.pdf')
 show()
-'''
 
+"""
 def maxmin(x,y, first_max = True):
     out_x = []
     out_y = []
@@ -144,12 +145,21 @@ def maxmin(x,y, first_max = True):
 t, T1,T2,T5,T6 = loadtxt('Messwerte/dyn1', unpack='true' )
 
 def flat_maxmin(x,y):
+    slope = -1
+    old_slope = -1
     outputx = []
     outputy = []
-    for i in range(25,len(y)-1):
-        if(y[i-1]< y[i] and y[i] > y[i+1] or y[i-1]> y[i] and y[i]< y[i+1] ):
+    for i in range(0,len(y)-1):
+        if(y[i]>[i+1]):
+            slope = -1
+        if(y[i]< y[i+1]):
+            slope = 1
+        else:
+            slope= 0;
+        if(slope > -1 and old_slope ==-1 or slope <1 and old_slope ==1):
             outputx.append(x[i])
             outputy.append(y[i])
+        old_slope = slope
     return [outputx,outputy]
 
 t =t*2 # Abtastrate voon 2 s secunden
@@ -157,7 +167,7 @@ T1_0= maxmin(t,T1)
 T2_0= maxmin(t,T2)
 T5_0= maxmin(t,T5)
 T6_0= maxmin(t,T6)
-"""
+
 print(T1_0)
 print(T2_0)
 
@@ -186,8 +196,8 @@ print('Amlitude nah : %s' % amplitude_n)
 
 kappa = 8520*385*(0.03)**2/(2*offset* um.math.log(amplitude_n.nominal_value/amplitude_f.nominal_value))
 print('Kappa Messing = %s' % kappa)
-"""
-"""
+
+
 
 print(T5_0)
 print(T6_0)
@@ -217,7 +227,7 @@ print('Amlitude nah : %s' % amplitude_n)
 
 kappa = 2800*830*(0.03)**2/(2*offset* um.math.log(amplitude_n.nominal_value/amplitude_f.nominal_value))
 print('Kappa Alu = %s' % kappa)
-"""
+close()
 plot(T1_0[0],T1_0[1], 'x' )
 plot(T2_0[0],T2_0[1], 'o')
 plot(t,T1, label='Messing fern')
@@ -241,15 +251,40 @@ t,T7,T8 = loadtxt('Messwerte/dyn2', unpack='true')
 t*= 2
 T7_0 = maxmin(t,T7)
 
+T8_0 = [[170,240,372,440,574,638,770,842,968,1042,1166],[T8[i/2 -1 ] for i in [170,240,372,440,574,638,770,842,968,1042,1166]]]
 
-for i in sig.argrelextrema(T8,np.greater):
-    print(t[i],T8[i])
+to_table = array([[T7_0[0][i],T7_0[1][i],T8_0[0][i],T8_0[1][i]] for i in range(0,11)])
+print(make_LaTeX_table(to_table, ['cc','cdc','dsf','sdx'], ))
 
-#plot(t,T7, label="Edelstahl nah")
-#plot(T7_0[0],T7_0[1],'x')
+offset = []
+for i in range(0,11):
+    offset.append( T8_0[0][i]-T7_0[0][i])
+
+offset = err(array(offset))
+print('Phasenverschiebung Stahl: %s' % offset)
+waveleng = 0.03* 200/offset
+print('Wellenlaenge Stahl: %s' % waveleng)
+amplitude = []
+for i in range (1,11):
+    amplitude.append(abs(T8_0[1][i-1]-T8_0[1][i]))
+amplitude_f = 0.5* err(array(amplitude))
+print('Amlitude fern : %s' % amplitude_f)
+amplitude = []
+for i in range (1,11):
+    amplitude.append(abs(T8_0[1][i-1]-T7_0[1][i]))
+amplitude_n = 0.5* err(array(amplitude))
+print('Amlitude nah : %s' % amplitude_n)
+
+kappa = 8000*400*(0.03)**2/(2*offset* um.math.log(amplitude_n.nominal_value/amplitude_f.nominal_value))
+print('Kappa sTAL = %s' % kappa)
+
+plot(t,T7, label="Edelstahl nah")
+plot(T7_0[0],T7_0[1],'x')
 plot(t,T8, label= "Edelstahl fern")
 plot(T8_0[0],array(T8_0[1]) ,'o')
+
 xlabel(r'Zeit - [s]')
 ylabel(r'Temperatur - [$^\circ C$]')
 legend()
 savefig('Diagramme/dyn_stahl.png')
+"""
